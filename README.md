@@ -1,35 +1,54 @@
-# AI-Based Early Detection of Diabetes Using Lifestyle and Genetic Data
+# Diabetes Risk Analysis
 
-## Overview
-This project focuses on building an AI-driven pipeline for early detection of diabetes using lifestyle signals (e.g., diet, activity, sleep) and genetic risk markers. The repository is currently a scaffold intended to house data ingestion, feature engineering, model training, and evaluation workflows.
+A machine learning web application for early detection of diabetes using lifestyle and genetic data. The project trains Logistic Regression and Random Forest models, selects the best performer, and serves predictions through a Streamlit interface.
 
-## Objectives
-- **Risk prediction**: Estimate diabetes risk from combined lifestyle and genetic features.
-- **Interpretability**: Provide clear explanations of which factors influence risk scores.
-- **Reproducibility**: Support repeatable experiments with documented datasets and configurations.
+## Project Structure
 
-## Planned Repository Structure
 ```
 .
-├── data/               # Raw and processed datasets (excluded from git)
-├── notebooks/          # Exploratory analysis and prototyping
-├── src/                # Core pipeline code (ingestion, features, modeling)
-├── models/             # Serialized model artifacts
-├── reports/            # Evaluation reports and figures
+├── app.py
+├── data/
+│   └── diabetes.csv
+├── models/
+├── src/
+│   ├── predict.py
+│   ├── preprocessing.py
+│   └── train_model.py
+├── requirements.txt
 └── README.md
 ```
 
-## Getting Started (placeholder)
-Once the pipeline is implemented, typical steps will include:
-1. Place raw datasets in `data/`.
-2. Run preprocessing to generate features.
-3. Train and evaluate models.
+## Setup
 
-## Contributing
-If you plan to add modules or datasets, please:
-- Keep raw data out of git.
-- Document new features or model training steps in this README.
-- Add tests where appropriate.
+1. Create a virtual environment and install dependencies:
+   ```bash
+   python -m venv .venv
+   source .venv/bin/activate
+   pip install -r requirements.txt
+   ```
+2. Train the model:
+   ```bash
+   python src/train_model.py
+   ```
+3. Run the Streamlit app:
+   ```bash
+   streamlit run app.py
+   ```
 
-## License
-License information will be added when the project structure is finalized.
+## Dataset
+
+The sample dataset is located at `data/diabetes.csv`. Replace it with your own CSV file that includes the following columns:
+
+- `age`
+- `bmi`
+- `physical_activity`
+- `diet`
+- `family_history`
+- `blood_pressure`
+- `glucose`
+- `diabetes` (target: 1 = diabetic, 0 = not diabetic)
+
+## Notes
+
+- The best-performing model pipeline is saved to `models/best_model.joblib`.
+- This project is intended for educational use and does not provide medical advice.

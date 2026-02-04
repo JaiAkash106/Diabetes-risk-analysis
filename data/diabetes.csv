@@ -1,0 +1,11 @@
+age,bmi,physical_activity,diet,family_history,blood_pressure,glucose,diabetes
+45,27.5,Moderate,Balanced,Yes,130,150,1
+52,31.2,Low,High Sugar,Yes,140,180,1
+36,23.1,High,Balanced,No,118,95,0
+29,26.4,Moderate,Low Carb,No,122,110,0
+61,34.9,Low,High Sugar,Yes,150,210,1
+40,28.0,High,Balanced,No,125,105,0
+54,30.5,Moderate,High Fat,Yes,138,170,1
+33,22.7,High,Balanced,No,115,90,0
+47,29.3,Moderate,Low Carb,Yes,132,160,1
+38,24.9,High,Balanced,No,120,100,0
